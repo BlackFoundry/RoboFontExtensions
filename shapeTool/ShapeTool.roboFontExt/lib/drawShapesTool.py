@@ -1,3 +1,5 @@
+from __future__ import print_function
+
 from mojo.events import BaseEventTool, installTool
 from AppKit import *
 
@@ -6,7 +8,7 @@ from lib.tools.drawing import strokePixelPath
 from dialogKit import ModalDialog, TextBox, EditText
 from vanilla import RadioGroup
 
-from robofab.pens.reverseContourPointPen import ReverseContourPointPen
+from fontPens.reverseContourPointPen import ReverseContourPointPen
 
 from mojo.extensions import ExtensionBundle
 
@@ -67,7 +69,7 @@ class GeometricShapesWindow(object):
             h = int(self.w.hInput.get())
         # if this fails just do nothing and print a tiny traceback
         except:
-            print "A number is required!"
+            print("A number is required!")
             return
         # draw the shape with the callback given on init
         self.callback(shape, (x, y, w, h), self.glyph)
